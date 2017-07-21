@@ -1,7 +1,7 @@
 import telepot
 from pprint import pprint
 from telepot.loop import MessageLoop
-bot = telepot.Bot('354305351:AAEWwnWaZo_Dnn1hOr_PuVCQtuH_WwzAy5A')
+bot = telepot.Bot()
 bot.getMe()
 
 response = bot.getUpdates()
