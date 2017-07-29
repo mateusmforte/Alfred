@@ -18,21 +18,23 @@ def trocadilho ():
     }
     num = randint(1,10)
     return(trocadilhos[num])
-def checkTxtMsg(msg):
+def callAlfred(msg):
     calls = ['ALFRED','OI ALFRED','HEY ALFRED']
     for each in calls:
         if str.upper(msg) == each:
             return True
-
-
+def checkCall(msg):
+    if str.upper(msg) == "ALFRED CONTE-ME UM TROCADILHO":
+        return True
 def handle(msg):
     content_type, chat_type, chat_id = telepot.glance(msg)
     print(content_type, chat_type, chat_id)
 
 
-    if content_type == 'text' and checkTxtMsg(msg['text']):
+    if content_type == 'text' and callAlfred(msg['text']):
+        bot.sendMessage(chat_id,'Olá Amo')
+    if content_type == 'text' and checkCall(msg['text']):
         bot.sendMessage(chat_id,trocadilho())
-
 bot = telepot.Bot("354305351:AAFAAnzBnsE43UPScoGRXO-a_qjZpEIgZkM")
 MessageLoop(bot, handle).run_as_thread()
 print ('Listening ...')
