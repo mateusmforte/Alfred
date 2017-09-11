@@ -24,7 +24,9 @@ def callAlfred(msg):
 
 #Checagem do chamado do trocadilho
 def checkCall(msg):
-    if str.upper(msg) == "ALFRED CONTE-ME UM TROCADILHO":
+    msg = str.upper(msg)
+    call = msg.find("TROCADILHO")
+    if call != -1:
         return "trocadilho"
 
 #API fornecida para o tratamento de texto
