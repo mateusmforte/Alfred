@@ -17,10 +17,10 @@ def trocadilho ():
 
 #Função para interpretar as formas de chamar o Alfred
 def callAlfred(msg):
-    calls = ['ALFRED','OI ALFRED','HEY ALFRED']
-    for each in calls:
-        if str.upper(msg) == each:
-            return True
+    msg = str.upper(msg)
+    call = msg.find("ALFRED")
+    if call != -1:
+        return True
 
 #Checagem do chamado do trocadilho
 def checkCall(msg):
