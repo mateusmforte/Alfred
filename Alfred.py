@@ -2,8 +2,8 @@ import sys
 import time
 import telepot
 from telepot.loop import MessageLoop
-from random import randint
 def trocadilho ():
+    from random import randint
     trocadilhos = []
     num = randint(0,99)
     arquivo = open("trocadilhos.txt","r",encoding='UTF-8')
