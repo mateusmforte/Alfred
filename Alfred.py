@@ -24,16 +24,23 @@ def trocadilho ():
     for linha in linha_trocadilho:
         trocadilhos.append(linha)
     return trocadilhos[num]
+
+#Função para interpretar as formas de chamar o Alfred
 def callAlfred(msg):
-    calls = ['ALFRED','OI ALFRED','HEY ALFRED']
-    for each in calls:
-        if str.upper(msg) == each:
-            return True
+    msg = str.upper(msg)
+    call = msg.find("ALFRED")
+    if call != -1:
+        return True
+
+#Checagem do chamado do trocadilho
 def checkCall(msg):
-    if str.upper(msg) == "ALFRED CONTE-ME UM TROCADILHO":
+    msg = str.upper(msg)
+    call = msg.find("TROCADILHO")
+    if call != -1:
         return "trocadilho"
-    if str.upper(msg) == "ALFRED COMO ESTA O CLIMA?":
-        return "previsao"
+
+#API fornecida para o tratamento de texto
+>>>>>>> master
 def handle(msg):
     content_type, chat_type, chat_id = telepot.glance(msg)
     print(content_type, chat_type, chat_id)
