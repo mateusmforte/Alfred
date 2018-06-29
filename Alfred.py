@@ -38,6 +38,8 @@ def handle(msg):
     if content_type == 'text' and checkCall(msg['text']) == "trocadilho":
         bot.sendMessage(chat_id,trocadilho())
 
+# Programa Principal
+
 bot = telepot.Bot("354305351:AAFAAnzBnsE43UPScoGRXO-a_qjZpEIgZkM")
 MessageLoop(bot, handle).run_as_thread()
 print ('Listening ...')
