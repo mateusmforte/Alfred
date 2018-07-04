@@ -8,9 +8,8 @@ def handle(msg):
     content_type, chat_type, chat_id = telepot.glance(msg)
     print(content_type, chat_type, chat_id)
     if content_type == 'text' and calls.callAlfred(msg['text']):
-        if "trocadilho" in msg['text']: 
-            if content_type == 'text' and calls.checkCall(msg['text']) == "trocadilho":
-                bot.sendMessage(chat_id, calls.trocadilho())
+        if "trocadilho" in str.lower(msg['text']): 
+            bot.sendMessage(chat_id, calls.trocadilho())
         else:
             bot.sendMessage(chat_id,'Olá Amo')
 
